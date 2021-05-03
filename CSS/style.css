@@ -3,11 +3,25 @@ body {
     background-color: rgb(24, 24, 24);
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: aliceblue;
 }
 
 h1 {
     text-align: center;
-    color: aliceblue;
+}
+
+th, td {
+    border: solid 1px white;
+    padding: 10px;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
 }

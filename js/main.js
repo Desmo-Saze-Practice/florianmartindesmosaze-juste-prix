@@ -45,6 +45,43 @@ function play(config) {
     }
     else {
         console.log(config.score);
+        // on selectionne le tableau de score
+        var scoreTableElement = document.getElementById('scoreTable');
+        // on ajoute la classe "active" au tableau des scores
+        // scoreTableElement.className = 'active';
+
+        // on crée une boucle qui va incrémenter la variable corespondant au nombre de partie à l'aide de la longueur du tableau des scores
+        for (var scoreIndex = 0; scoreIndex < config.score.length; scoreIndex++) {
+
+            //on incrémente le nombre de partie joué pour chaque tour de boucle
+            var gameNumber = scoreIndex + 1;
+
+            // on ajoute le score de la partie à la variable corespondante
+            var gameResult = config.score[scoreIndex]
+
+            // on crée une rangé du tableau
+            var rowElement = document.createElement('tr');
+
+            // on crée une cellule du tableau pour le numéro de la partie
+            var gameCellElement = document.createElement('td');
+
+            // on ajoute le numéro de la partie dans cette cellule
+            gameCellElement.textContent = gameNumber;
+
+            // on crée une cellule pour le score de la partie
+            var scoreCellElement = document.createElement('td');
+
+            // on ajoute le score de la partie à cette cellule
+            scoreCellElement.textContent = gameResult;
+
+            // on ratache les cellule à des rangés
+            rowElement.appendChild(gameCellElement);
+            rowElement.appendChild(scoreCellElement);
+
+            // on ratache les rangés au tableau
+            var tbodyElement = scoreTableElement.querySelector('tbody');
+            tbodyElement.appendChild(rowElement);
+        }
     }
 }
 
